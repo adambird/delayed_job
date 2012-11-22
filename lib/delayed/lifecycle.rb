@@ -7,7 +7,7 @@ module Delayed
       :execute    => [:worker],
       :loop       => [:worker],
       :perform    => [:worker, :job],
-      :error      => [:worker, :job],
+      :error      => [:worker, :job, :error],
       :failure    => [:worker, :job],
       :invoke_job => [:job]
     }

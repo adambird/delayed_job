@@ -191,7 +191,7 @@ module Delayed
       job.last_error = "#{error.message}\n#{error.backtrace.join("\n")}"
       failed(job)
     rescue Exception => error
-      self.class.lifecycle.run_callbacks(:error, self, job){ handle_failed_job(job, error) }
+      self.class.lifecycle.run_callbacks(:error, self, job, error){ handle_failed_job(job, error) }
       return false  # work failed
     end
 
